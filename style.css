@@ -35,3 +35,8 @@ body {
     height: calc(224px / 4);
     width: calc(200px / 4);
 }
+
+.numbtn {
+    height: calc(224px / 4);
+    width: calc(200px / 4);
+}
