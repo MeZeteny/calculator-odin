@@ -40,3 +40,8 @@ body {
     height: calc(224px / 4);
     width: calc(200px / 4);
 }
+
+#equals, #clear {
+    height: calc(224px / 4);
+    width: calc(200px / 4);
+}
