@@ -11,7 +11,14 @@ function multiply(num1, num2) {
 }
 
 function divide(num1, num2) {
-    return num1 / num2;
+    let res = num1 / num2;
+    if (num2 == 0) {
+        return "You stupid";
+    }
+    if (num1 % num2 !== 0) {
+        return res.toFixed(3);
+    }
+    return res;
 }
 
 function operate (operator, num1, num2) {
@@ -91,6 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
         operator.textContent = "";
         text2.textContent = "";
         result = 0;
+        firstNum = 0;
+        secondNum = 0;
     });
 
 });
