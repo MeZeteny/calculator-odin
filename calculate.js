@@ -15,22 +15,22 @@ function divide(num1, num2) {
 }
 
 function operate (operator, num1, num2) {
+
+    num1 = Number(num1);
+    num2 = Number(num2);
+
     switch (operator) {
         case "+":
-            add(num1, num2);
-            break;
+            return add(num1, num2);
 
         case "-":
-            subtract(num1, num2);
-            break;
+            return subtract(num1, num2);
 
         case "*":
-            multiply(num1, num2);
-            break;
+            return multiply(num1, num2);
 
         case "/":
-            divide(num1, num2);
-            break;
+            return divide(num1, num2);
     }
 }
 
@@ -75,14 +75,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    let result = 0;
+
     equal.addEventListener("click", () => {
-        
+        result = operate(operator.textContent, Number(firstNum), Number(secondNum));
+        firstNum = result;
+        text1.textContent = result;
+        operator.textContent = "";
+        text2.textContent = "";
+
     });
 
     clear.addEventListener("click", () => {
         text1.textContent = "";
         operator.textContent = "";
         text2.textContent = "";
+        result = 0;
     });
 
 });
