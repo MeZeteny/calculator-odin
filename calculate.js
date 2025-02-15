@@ -35,21 +35,55 @@ function operate (operator, num1, num2) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const text = document.querySelector(".screen");
+
+    const screen = document.querySelector(".screen");
+
+    //Screen children
+    const text1 = document.querySelector("#first-text");
+    const operator = document.querySelector("#operator");
+    const text2 = document.querySelector("#second-text");
 
     //Number keys
     const numberKeys = document.querySelectorAll(".numbtn");
 
     //Function keys
+    const functionKeys = document.querySelectorAll(".btn");
+    const equal = document.querySelector("#equals");
+    const clear = document.querySelector("#clear");
 
+    let firstNum = 0;
+    let secondNum = 0;
 
-    text.textContent = "";
+    text1.textContent = "";
+    operator.textContent = "";
 
     numberKeys.forEach(num => {
         num.addEventListener("click", () => {
-            text.textContent += num.textContent; 
+            if (operator.textContent == "") {
+                text1.textContent += num.textContent;
+                firstNum = text1.textContent;
+            } else {
+                text2.textContent += num.textContent;
+                secondNum  = text2.textContent;
+            }            
         });
     });
     
+    functionKeys.forEach(fun => {
+        fun.addEventListener("click", () => {
+            operator.textContent = fun.textContent;
+        });
+    });
+
+    equal.addEventListener("click", () => {
+        
+    });
+
+    clear.addEventListener("click", () => {
+        text1.textContent = "";
+        operator.textContent = "";
+        text2.textContent = "";
+    });
+
 });
 
