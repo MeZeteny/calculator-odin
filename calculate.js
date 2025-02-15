@@ -33,3 +33,23 @@ function operate (operator, num1, num2) {
             break;
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const text = document.querySelector(".screen");
+
+    //Number keys
+    const numberKeys = document.querySelectorAll(".numbtn");
+
+    //Function keys
+
+
+    text.textContent = "";
+
+    numberKeys.forEach(num => {
+        num.addEventListener("click", () => {
+            text.textContent += num.textContent; 
+        });
+    });
+    
+});
+
