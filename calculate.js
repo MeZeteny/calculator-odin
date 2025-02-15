@@ -64,6 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
     text1.textContent = "";
     operator.textContent = "";
 
+    function equalClicked() {
+        result = operate(operator.textContent, Number(firstNum), Number(secondNum));
+        firstNum = result;
+        text1.textContent = result;
+        operator.textContent = "";
+        text2.textContent = "";
+    }
+
     numberKeys.forEach(num => {
         num.addEventListener("click", () => {
             if (operator.textContent == "") {
@@ -78,7 +86,13 @@ document.addEventListener("DOMContentLoaded", () => {
     
     functionKeys.forEach(fun => {
         fun.addEventListener("click", () => {
-            operator.textContent = fun.textContent;
+            if (operator.textContent != "") {
+                equalClicked();
+                operator.textContent = fun.textContent;
+            }
+            else {
+                operator.textContent = fun.textContent;
+            }
         });
     });
 
@@ -89,8 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         firstNum = result;
         text1.textContent = result;
         operator.textContent = "";
-        text2.textContent = "";
-
+        text2.textContent = "";   
     });
 
     clear.addEventListener("click", () => {
