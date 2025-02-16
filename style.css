@@ -44,6 +44,8 @@ body {
     border-style: solid;
     border-radius: 200px;
     font-family: 'Atkinson Hyperlegible Next';
+    display: flex;
+    justify-content: center;
 }
 
 .btn, #equals {
