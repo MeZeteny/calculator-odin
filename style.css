@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
+
 body {
     display: flex;
     justify-content: center;
+    font-family: 'Atkinson Hyperlegible Next';
 }
 
 .calculator-body {
-    background-color: lightgray;
+    background-color: rgb(202, 202, 136);
     height: 400px;
     width: 300px;
+    border-style: solid;
+    border-radius: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,6 +22,8 @@ body {
     background-color: lightblue;
     width: 260px;
     height: 50px;
+    border-style: solid;
+    border-radius: 8px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -31,17 +38,29 @@ body {
     padding: 30px 20px;
 }
 
-.btn {
+.numbtn, #equals, #clear, .btn {
     height: calc(224px / 4);
     width: calc(200px / 4);
+    border-style: solid;
+    border-radius: 200px;
+    font-family: 'Atkinson Hyperlegible Next';
 }
 
-.numbtn {
-    height: calc(224px / 4);
-    width: calc(200px / 4);
+.btn, #equals {
+    border-color: black;
+    background-color: darkgoldenrod;
+    color: white;
+    font-weight: 300;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#equals, #clear {
-    height: calc(224px / 4);
-    width: calc(200px / 4);
+.numbtn, #clear {
+    border-color: black;
+    background-color: darkslategrey;
+    color: white;
+    font-weight: 300;
+    font-size: 24px;
 }
